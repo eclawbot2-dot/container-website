@@ -49,7 +49,7 @@ export function Hero() {
         >
           <a
             href="#lineup"
-            className="group inline-flex items-center gap-3 bg-ember px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-ink transition-colors hover:bg-sand"
+            className="group inline-flex items-center gap-3 bg-ember px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-ink transition-colors hover:bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand"
           >
             {t.hero.cta}
             <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
@@ -58,7 +58,7 @@ export function Hero() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 border border-sand/40 px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:border-ember hover:text-ember"
+            className="inline-flex items-center gap-3 border border-sand/40 px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:border-ember hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
           >
             <InstagramIcon className="h-4 w-4" />
             {t.hero.instagram}

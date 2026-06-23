@@ -35,17 +35,17 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a
           href="#top"
-          className="font-display text-lg font-700 uppercase tracking-[0.3em] text-sand"
+          className="font-display text-lg font-700 uppercase tracking-[0.3em] text-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
         >
           {t.hero.title}
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav aria-label={t.navLabel} className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="font-display text-sm font-medium uppercase tracking-widest text-sand/80 transition-colors hover:text-ember"
+              className="font-display text-sm font-medium uppercase tracking-widest text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
             >
               {l.label}
             </a>
@@ -58,17 +58,18 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t.hero.instagram}
-            className="hidden text-sand/80 transition-colors hover:text-ember sm:block"
+            className="hidden text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember sm:block"
           >
             <InstagramIcon />
           </a>
           <LangToggle />
           <button
             type="button"
-            aria-label="Menu"
+            aria-label={t.menu}
             aria-expanded={open}
+            aria-controls="mobile-nav"
             onClick={() => setOpen((o) => !o)}
-            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+            className="-mr-1.5 flex h-11 w-11 flex-col items-center justify-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember md:hidden rtl:-ml-1.5 rtl:mr-0"
           >
             <span
               className={`h-0.5 w-5 bg-sand transition-transform ${
@@ -86,13 +87,17 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-sand/10 bg-ink/95 px-5 py-4 md:hidden">
+        <nav
+          id="mobile-nav"
+          aria-label={t.navLabel}
+          className="border-t border-sand/10 bg-ink/95 px-5 py-2 backdrop-blur-md md:hidden rtl:text-right"
+        >
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-3 font-display text-base uppercase tracking-widest text-sand/90"
+              className="flex min-h-[44px] items-center font-display text-base uppercase tracking-widest text-sand/90 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               {l.label}
             </a>

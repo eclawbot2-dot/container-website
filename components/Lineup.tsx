@@ -75,7 +75,7 @@ export function Lineup() {
                       href={INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center gap-2 border-b border-ember pb-1 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:text-ember"
+                      className="group/btn inline-flex min-h-[44px] items-center gap-2 border-b border-ember pb-1 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
                     >
                       {t.lineup.ticketsCta}
                       <ArrowIcon className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 rtl:rotate-180 rtl:group-hover/btn:-translate-x-1" />

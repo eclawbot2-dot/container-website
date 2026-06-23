@@ -3,6 +3,8 @@ export type Lang = 'en' | 'ar';
 export type Dict = {
   dir: 'ltr' | 'rtl';
   nav: { about: string; lineup: string; visit: string; tickets: string };
+  navLabel: string;
+  menu: string;
   langToggle: { label: string; switchTo: string };
   hero: {
     kicker: string;
@@ -35,6 +37,7 @@ export type Dict = {
     hoursTitle: string;
     hours: string;
     mapCta: string;
+    mapTitle: string;
     entryTitle: string;
     entry: string;
   };
@@ -53,6 +56,8 @@ export const dict: Record<Lang, Dict> = {
   en: {
     dir: 'ltr',
     nav: { about: 'About', lineup: 'Events', visit: 'Visit', tickets: 'Tickets' },
+    navLabel: 'Primary',
+    menu: 'Menu',
     langToggle: { label: 'العربية', switchTo: 'Switch to Arabic' },
     hero: {
       kicker: 'Jeddah · Red Sea Port',
@@ -96,6 +101,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'Doors and set times are published per event. Sets typically run from late afternoon through the night.',
       mapCta: 'Open in Maps',
+      mapTitle: 'Map showing The Container venue in the Jeddah port area on the Red Sea coast',
       entryTitle: 'Entry',
       entry:
         'The Container hosts licensed live electronic-music events. Entry is for ticket-holders; please bring valid ID. Event-specific entry details are confirmed at announcement.',
@@ -116,6 +122,8 @@ export const dict: Record<Lang, Dict> = {
   ar: {
     dir: 'rtl',
     nav: { about: 'عن المكان', lineup: 'الفعاليات', visit: 'الزيارة', tickets: 'التذاكر' },
+    navLabel: 'التنقّل الرئيسي',
+    menu: 'القائمة',
     langToggle: { label: 'English', switchTo: 'التبديل إلى الإنجليزية' },
     hero: {
       kicker: 'جدة · ميناء البحر الأحمر',
@@ -159,6 +167,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'تُنشَر مواعيد الأبواب والعروض لكل فعالية. عادةً ما تمتد العروض من بعد الظهر حتى الليل.',
       mapCta: 'افتح في الخرائط',
+      mapTitle: 'خريطة توضّح موقع ذا كونتينر في منطقة ميناء جدة على ساحل البحر الأحمر',
       entryTitle: 'الدخول',
       entry:
         'يستضيف ذا كونتينر فعاليات موسيقى إلكترونية حيّة مرخّصة. الدخول لحاملي التذاكر؛ يُرجى إحضار هوية سارية. تُؤكَّد تفاصيل الدخول الخاصة بكل فعالية عند الإعلان عنها.',

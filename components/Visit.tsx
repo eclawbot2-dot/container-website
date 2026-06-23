@@ -3,10 +3,10 @@
 import { useLang } from './LangProvider';
 import { Reveal } from './Reveal';
 import { PinIcon, ArrowIcon } from './icons';
-import { MAPS_URL, STATIC_MAP_URL } from '@/lib/config';
+import { MAPS_URL, mapEmbedUrl } from '@/lib/config';
 
 export function Visit() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   const blocks = [
     { title: t.visit.addressTitle, body: t.visit.address },
@@ -44,30 +44,32 @@ export function Visit() {
 
           {/* Map */}
           <Reveal delay={160} className="flex flex-col">
-            <a
-              href={MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block flex-1 overflow-hidden border border-sand/10"
-              aria-label={t.visit.mapCta}
-            >
-              <img
-                src={STATIC_MAP_URL}
-                alt="Map of the Jeddah port area on the Red Sea coast"
-                className="h-full min-h-[280px] w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rtl:flex-row-reverse">
-                <span className="inline-flex items-center gap-2 text-sand">
+            <div className="flex flex-1 flex-col overflow-hidden border border-sand/10">
+              <div className="relative aspect-video w-full bg-steel">
+                <iframe
+                  src={mapEmbedUrl(lang)}
+                  title={t.visit.mapTitle}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full border-0 grayscale-[0.35] contrast-[1.05]"
+                />
+              </div>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-2 border-t border-sand/10 bg-ink px-4 py-4 text-sand transition-colors hover:bg-steel focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember rtl:flex-row-reverse"
+              >
+                <span className="inline-flex items-center gap-2">
                   <PinIcon className="h-5 w-5 text-ember" />
                   <span className="font-display text-sm font-600 uppercase tracking-widest">
                     {t.visit.mapCta}
                   </span>
                 </span>
                 <ArrowIcon className="h-5 w-5 text-ember transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-              </div>
-            </a>
+              </a>
+            </div>
           </Reveal>
         </div>
       </div>

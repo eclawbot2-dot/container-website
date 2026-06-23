@@ -36,7 +36,7 @@ export function Footer() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sand/80 transition-colors hover:text-ember"
+              className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               <InstagramIcon className="h-5 w-5" />
               <span>@{INSTAGRAM_HANDLE}</span>
@@ -49,7 +49,7 @@ export function Footer() {
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="mt-4 block break-all text-sand/80 transition-colors hover:text-ember"
+              className="mt-4 inline-flex min-h-[44px] items-center break-all text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
             >
               {CONTACT_EMAIL}
             </a>
