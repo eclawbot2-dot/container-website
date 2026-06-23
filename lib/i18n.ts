@@ -27,6 +27,7 @@ export type Dict = {
     detailsCta: string;
     ticketsCta: string;
     ticketsSoon: string;
+    ticketsBuy: string;
     tba: string;
     note: string;
   };
@@ -41,6 +42,8 @@ export type Dict = {
     lineupNote: string;
     ticketsTitle: string;
     ticketsSoon: string;
+    ticketsBuy: string;
+    ticketsVia: string;
     mapCta: string;
     metaTitle: (artist: string) => string;
     metaDesc: (artist: string, date: string) => string;
@@ -121,6 +124,7 @@ export const dict: Record<Lang, Dict> = {
       detailsCta: 'Event details',
       ticketsCta: 'Tickets & info',
       ticketsSoon: 'Tickets — coming soon',
+      ticketsBuy: 'Tickets · Webook',
       tba: 'More to be announced',
       note: 'Lineup and dates are subject to change. Ticketing details will be announced here ahead of each event.',
     },
@@ -135,6 +139,8 @@ export const dict: Record<Lang, Dict> = {
       lineupNote: 'Lineup subject to change.',
       ticketsTitle: 'Tickets',
       ticketsSoon: 'Tickets — coming soon',
+      ticketsBuy: 'Buy tickets',
+      ticketsVia: 'Tickets via Webook — opens in a new tab.',
       mapCta: 'Open in Maps',
       metaTitle: (artist) => `${artist} at The Container`,
       metaDesc: (artist, date) =>
@@ -208,6 +214,7 @@ export const dict: Record<Lang, Dict> = {
       detailsCta: 'تفاصيل الفعالية',
       ticketsCta: 'التذاكر والمعلومات',
       ticketsSoon: 'التذاكر — قريبًا',
+      ticketsBuy: 'التذاكر · Webook',
       tba: 'سيُعلن عن المزيد',
       note: 'العروض والتواريخ قابلة للتغيير. سيُعلَن عن تفاصيل التذاكر هنا قبل كل فعالية.',
     },
@@ -222,6 +229,8 @@ export const dict: Record<Lang, Dict> = {
       lineupNote: 'العروض قابلة للتغيير.',
       ticketsTitle: 'التذاكر',
       ticketsSoon: 'التذاكر — قريبًا',
+      ticketsBuy: 'اشترِ التذاكر',
+      ticketsVia: 'التذاكر عبر Webook — تُفتح في علامة تبويب جديدة.',
       mapCta: 'افتح في الخرائط',
       metaTitle: (artist) => `${artist} في ذا كونتينر`,
       metaDesc: (artist, date) =>

@@ -2,7 +2,7 @@
 
 import { useLang } from './LangProvider';
 import { formatEventDate } from '@/lib/i18n';
-import { EVENTS } from '@/lib/config';
+import { EVENTS, TICKETS_URL } from '@/lib/config';
 import { Reveal } from './Reveal';
 import { ArrowIcon } from './icons';
 
@@ -85,10 +85,16 @@ export function Lineup() {
                         {t.lineup.detailsCta}
                         <ArrowIcon className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 rtl:rotate-180 rtl:group-hover/btn:-translate-x-1" />
                       </a>
-                      {/* Tickets not yet on sale — visible placeholder, NOT a link. */}
-                      <span className="inline-flex items-center gap-2 font-display text-xs font-600 uppercase tracking-widest text-sand/40">
-                        {t.lineup.ticketsSoon}
-                      </span>
+                      {/* Real ticket link → Webook (Jeddah events browse). */}
+                      <a
+                        href={TICKETS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-[44px] items-center gap-2 font-display text-xs font-600 uppercase tracking-widest text-ember transition-colors hover:text-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                      >
+                        {t.lineup.ticketsBuy}
+                        <ArrowIcon className="h-4 w-4 rtl:rotate-180" />
+                      </a>
                     </>
                   )}
                 </div>
