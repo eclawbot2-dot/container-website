@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src="/images/hero-port.jpg"
-          alt="Shipping container terminal at dusk on the Red Sea"
+          alt="Crowd with hands raised before a steel-rigged open-air stage under purple lights at night"
           className="h-full w-full animate-slowZoom object-cover object-center"
           fetchPriority="high"
         />

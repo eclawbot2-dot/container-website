@@ -46,7 +46,7 @@ export function About() {
             <Reveal className="col-span-2 aspect-[16/10] overflow-hidden">
               <img
                 src="/images/containers-dusk.jpg"
-                alt="Stacked shipping containers at dusk"
+                alt="Crowd dancing in a raw industrial warehouse lit by red laser beams"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />

@@ -65,7 +65,7 @@ export const metadata: Metadata = {
         url: '/images/hero-port.jpg',
         width: 1920,
         height: 1280,
-        alt: 'The Container — shipping container terminal at dusk on the Red Sea, Jeddah',
+        alt: 'The Container — crowd at a live electronic-music event before a steel-rigged stage under stage lights',
       },
     ],
     type: 'website',
