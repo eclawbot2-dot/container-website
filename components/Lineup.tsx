@@ -2,7 +2,7 @@
 
 import { useLang } from './LangProvider';
 import { formatEventDate } from '@/lib/i18n';
-import { EVENTS, INSTAGRAM_URL } from '@/lib/config';
+import { EVENTS } from '@/lib/config';
 import { Reveal } from './Reveal';
 import { ArrowIcon } from './icons';
 
@@ -65,21 +65,31 @@ export function Lineup() {
                   {ev.tba ? t.lineup.tba : ev.artist}
                 </h3>
 
-                <div className="mt-auto pt-7">
+                {ev.genre && !ev.tba && (
+                  <p className="mt-3 font-display text-xs font-medium uppercase tracking-widest text-sand/50">
+                    {ev.genre}
+                  </p>
+                )}
+
+                <div className="mt-auto flex flex-col gap-3 pt-7">
                   {ev.tba ? (
                     <span className="inline-flex items-center gap-2 font-display text-sm font-600 uppercase tracking-widest text-sand/40">
                       {t.lineup.tba}
                     </span>
                   ) : (
-                    <a
-                      href={INSTAGRAM_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn inline-flex min-h-[44px] items-center gap-2 border-b border-ember pb-1 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
-                    >
-                      {t.lineup.ticketsCta}
-                      <ArrowIcon className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 rtl:rotate-180 rtl:group-hover/btn:-translate-x-1" />
-                    </a>
+                    <>
+                      <a
+                        href={`/events/${ev.id}/`}
+                        className="group/btn inline-flex min-h-[44px] items-center gap-2 border-b border-ember pb-1 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember"
+                      >
+                        {t.lineup.detailsCta}
+                        <ArrowIcon className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 rtl:rotate-180 rtl:group-hover/btn:-translate-x-1" />
+                      </a>
+                      {/* Tickets not yet on sale — visible placeholder, NOT a link. */}
+                      <span className="inline-flex items-center gap-2 font-display text-xs font-600 uppercase tracking-widest text-sand/40">
+                        {t.lineup.ticketsSoon}
+                      </span>
+                    </>
                   )}
                 </div>
               </div>

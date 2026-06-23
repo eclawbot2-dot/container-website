@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useLang } from './LangProvider';
 import { LangToggle } from './LangToggle';
 import { InstagramIcon } from './icons';
-import { INSTAGRAM_URL } from '@/lib/config';
 
 export function Header() {
   const { t } = useLang();
@@ -53,15 +52,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t.hero.instagram}
-            className="hidden text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember sm:block"
+          {/* No verified official Instagram exists — placeholder, not a link. */}
+          <span
+            aria-label={t.hero.instagramSoon}
+            title={t.hero.instagramSoon}
+            className="hidden cursor-default text-sand/35 sm:block"
           >
             <InstagramIcon />
-          </a>
+          </span>
           <LangToggle />
           <button
             type="button"

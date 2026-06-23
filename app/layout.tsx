@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Oswald, Inter, Cairo } from 'next/font/google';
 import './globals.css';
 import { LangProvider } from '@/components/LangProvider';
-import { EVENTS, VENUE_COORDS, INSTAGRAM_URL } from '@/lib/config';
+import { EVENTS, VENUE_COORDS } from '@/lib/config';
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -111,11 +111,12 @@ const jsonLd = {
     latitude: VENUE_COORDS.lat,
     longitude: VENUE_COORDS.lng,
   },
-  sameAs: [INSTAGRAM_URL],
+  // No verified social profile yet — omit sameAs rather than publish a guess.
   // Derived from the single source of truth (EVENTS); TBA placeholders excluded.
   event: EVENTS.filter((e) => !e.tba).map((e) => ({
     '@type': 'MusicEvent',
     name: `${e.artist} at The Container`,
+    url: `${SITE_URL}/events/${e.id}/`,
     startDate: e.dateISO,
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',

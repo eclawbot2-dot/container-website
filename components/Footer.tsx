@@ -2,7 +2,6 @@
 
 import { useLang } from './LangProvider';
 import { InstagramIcon } from './icons';
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_EMAIL } from '@/lib/config';
 
 export function Footer() {
   const { t } = useLang();
@@ -32,27 +31,21 @@ export function Footer() {
             <p className="font-display text-sm font-600 uppercase tracking-widest text-ember">
               {t.footer.follow}
             </p>
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
-            >
+            {/* No verified official Instagram — placeholder, not a link. */}
+            <span className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-sand/40">
               <InstagramIcon className="h-5 w-5" />
-              <span>@{INSTAGRAM_HANDLE}</span>
-            </a>
+              <span>{t.footer.instagramSoon}</span>
+            </span>
           </div>
 
           <div>
             <p className="font-display text-sm font-600 uppercase tracking-widest text-ember">
               {t.footer.contact}
             </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="mt-4 inline-flex min-h-[44px] items-center break-all text-sand/80 transition-colors hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
-            >
-              {CONTACT_EMAIL}
-            </a>
+            {/* No live mailbox yet — placeholder, not an active mailto. */}
+            <span className="mt-4 inline-flex min-h-[44px] items-center text-sand/40">
+              {t.footer.contactSoon}
+            </span>
           </div>
         </div>
 

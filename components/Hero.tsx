@@ -2,7 +2,6 @@
 
 import { useLang } from './LangProvider';
 import { InstagramIcon, ArrowIcon } from './icons';
-import { INSTAGRAM_URL } from '@/lib/config';
 
 export function Hero() {
   const { t } = useLang();
@@ -54,15 +53,14 @@ export function Hero() {
             {t.hero.cta}
             <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
           </a>
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 border border-sand/40 px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-sand transition-colors hover:border-ember hover:text-ember focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
+          {/* No verified Instagram yet — visible placeholder, not a link. */}
+          <span
+            title={t.hero.instagramSoon}
+            className="inline-flex cursor-default items-center gap-3 border border-dashed border-sand/25 px-7 py-4 font-display text-sm font-600 uppercase tracking-widest text-sand/45"
           >
             <InstagramIcon className="h-4 w-4" />
-            {t.hero.instagram}
-          </a>
+            {t.hero.instagramSoon}
+          </span>
         </div>
       </div>
 
