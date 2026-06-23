@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       {
         url: '/images/hero-port.jpg',
         width: 1920,
-        height: 2905,
+        height: 1280,
         alt: 'The Container — shipping container terminal at dusk on the Red Sea, Jeddah',
       },
     ],

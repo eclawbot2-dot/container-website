@@ -54,7 +54,7 @@ export function About() {
             <Reveal delay={120} className="aspect-square overflow-hidden">
               <img
                 src="/images/dj-decks.jpg"
-                alt="DJ decks and turntables"
+                alt="DJ performing on stage with decks and lasers above the crowd"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
@@ -62,7 +62,7 @@ export function About() {
             <Reveal delay={200} className="aspect-square overflow-hidden">
               <img
                 src="/images/waterfront-night.jpg"
-                alt="Red Sea waterfront at night"
+                alt="Night festival crowd with confetti and stage lights"
                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
