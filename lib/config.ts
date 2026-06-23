@@ -9,9 +9,10 @@
 export const INSTAGRAM_HANDLE = 'coming-soon';
 export const INSTAGRAM_VERIFIED = false;
 
-// Webook Jeddah events — swap to the specific event slug when on sale
-export const TICKETS_URL = 'https://webook.com/explore?city=JED&country=SA';
-export const TICKETS_VERIFIED = true;
+// TODO: no ticket URL yet — placeholder until on sale. Render every Tickets CTA
+// as a "coming soon" non-link until a real on-sale URL is confirmed.
+export const TICKETS_URL = '';
+export const TICKETS_VERIFIED = false;
 
 // TODO: no real mailbox provisioned for info@container.jahdev.com — placeholder.
 // Treat as not-yet-live; do not render an active mailto.

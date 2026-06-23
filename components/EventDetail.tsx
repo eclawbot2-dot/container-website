@@ -9,7 +9,6 @@ import { formatEventDate, formatEventTime, eventBios } from '@/lib/i18n';
 import {
   getEvent,
   MAPS_URL,
-  TICKETS_URL,
   mapEmbedUrl,
   type EventItem,
 } from '@/lib/config';
@@ -142,22 +141,18 @@ export function EventDetail({ slug }: { slug: string }) {
                   </p>
                 </Reveal>
 
-                {/* Tickets — real link to Webook (Jeddah events browse). */}
+                {/* No ticket URL yet — visible "coming soon" placeholder, not a link. */}
                 <Reveal delay={180}>
                   <div className="mt-10 border border-sand/15 bg-steel/40 p-6">
                     <h2 className="font-display text-lg font-600 uppercase tracking-wide text-ember">
                       {t.event.ticketsTitle}
                     </h2>
-                    <a
-                      href={TICKETS_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group mt-4 inline-flex min-h-[44px] items-center gap-3 bg-ember px-6 py-3 font-display text-sm font-600 uppercase tracking-widest text-ink transition-colors hover:bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand"
+                    <span
+                      aria-disabled="true"
+                      className="mt-4 inline-flex min-h-[44px] cursor-default items-center gap-3 border border-sand/25 bg-steel px-6 py-3 font-display text-sm font-600 uppercase tracking-widest text-sand/45"
                     >
-                      {t.event.ticketsBuy}
-                      <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                    </a>
-                    <p className="mt-3 text-xs text-sand/50">{t.event.ticketsVia}</p>
+                      {t.event.ticketsSoon}
+                    </span>
                   </div>
                 </Reveal>
 
