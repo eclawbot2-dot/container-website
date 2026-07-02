@@ -91,4 +91,11 @@ html[dir='rtl'] .font-display {
   .animate-slowZoom {
     animation: none !important;
   }
+  /* fadeUp elements start at opacity-0 and rely on the animation to appear —
+     when motion is reduced, skip the animation but force them visible. */
+  .animate-fadeUp {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

@@ -71,6 +71,7 @@ export type Dict = {
     instagramSoon: string;
     contactSoon: string;
   };
+  notFound: { title: string; body: string };
   months: string[];
   weekdays: string[];
 };
@@ -173,6 +174,10 @@ export const dict: Record<Lang, Dict> = {
       instagramSoon: 'Instagram — coming soon',
       contactSoon: 'Contact details — coming soon',
     },
+    notFound: {
+      title: 'Page not found',
+      body: 'The page you are looking for does not exist or has moved.',
+    },
     months: [
       'January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December',
@@ -263,6 +268,10 @@ export const dict: Record<Lang, Dict> = {
       instagramSoon: 'إنستغرام — قريبًا',
       contactSoon: 'تفاصيل التواصل — قريبًا',
     },
+    notFound: {
+      title: 'الصفحة غير موجودة',
+      body: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+    },
     months: [
       'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
       'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر',
@@ -278,10 +287,9 @@ export function formatEventDate(iso: string, lang: Lang): string {
   const day = d.getDate();
   const month = t.months[d.getMonth()];
   const year = d.getFullYear();
-  // Use Western digits for both; readable in EN and AR
-  return lang === 'ar'
-    ? `${wd} · ${day} ${month} ${year}`
-    : `${wd} · ${day} ${month} ${year}`;
+  // Same shape in both languages (Western digits — readable in EN and AR);
+  // weekday/month names come from the active language's tables above.
+  return `${wd} · ${day} ${month} ${year}`;
 }
 
 // "23:00" (24h, Jeddah local) → a readable label in the active language.

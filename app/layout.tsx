@@ -79,7 +79,8 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    // iOS Safari ignores SVG touch icons — serve a real PNG.
+    apple: '/apple-touch-icon.png',
   },
 };
 
